@@ -1,0 +1,34 @@
+
+<h1>MONGODB RETRIEVAL OF DATA</h1>
+<section class="insert">
+    <h3>Insert Data</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="title">NAME</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="input">
+            <label for="content">IMAGE</label>
+            <input type="text" id="content" name="content">
+        </div>
+        <div class="input">
+            <label for="author">SUMMARY</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+</section>
+<section class="get">
+    <h3>Get Data</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>NAME: {{ this.title }}</div>
+                <div>IMAGE: {{ this.content }}</div>
+                <div>SUMMARY: {{ this.author }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
